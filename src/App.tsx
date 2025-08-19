@@ -1,11 +1,12 @@
 import { useState, useEffect, type ComponentType } from 'react';
 
 // Import slide components from their new files
-import { UNTWelcomeSlide } from './components/UNTWelcomeSlide';
-import { UNTProjectsSlide } from './components/UNTProjectsSlide';
-import { UNTVideoSlide } from './components/UNTVideoSlide';
-import { UNTJoinSlide } from './components/UNTJoinSlide';
+import { WelcomeSlide } from './components/WelcomeSlide.tsx';
+import { ProjectsSlide } from './components/ProjectsSlide.tsx';
+//import { VideoSlide } from './components/VideoSlide.tsx';
+import { JoinSlide } from './components/JoinSlide.tsx';
 import { Sidebar } from './components/Sidebar';
+import { BotathonSlide } from './components/BotathonSlide.tsx';
 
 // --- Configuration ---
 const DEFAULT_SLIDE_DURATION: number = 6000;
@@ -18,10 +19,11 @@ export interface SlideConfig {
 
 // --- Slides Configuration ---
 const slideComponents: SlideConfig[] = [
-    { component: UNTWelcomeSlide, duration: 6000 },
-    { component: UNTProjectsSlide, duration: 8000 },
-    { component: UNTVideoSlide, duration: 30000 },
-    { component: UNTJoinSlide, duration: 7000 }
+    { component: WelcomeSlide, duration: 6000 },
+    { component: ProjectsSlide, duration: 9000 },
+    //{ component: VideoSlide, duration: 30000 },
+    { component: JoinSlide, duration: 7000 },
+    { component: BotathonSlide, duration: 10000 }
 ];
 
 // --- Main App Component ---
@@ -60,7 +62,7 @@ const App = () => {
             <Sidebar />
             <main className="flex-1 p-4 sm:p-6 md:p-10 flex flex-col">
                 <div className="relative flex-1 bg-white dark:bg-gray-800 rounded-2xl shadow-lg flex flex-col justify-center items-center p-6 pb-16 overflow-hidden">
-                    <div key={currentSlide} className="w-full h-full flex items-center justify-center slide-animation">
+                    <div key={currentSlide} className="w-full h-full flex slide-animation">
                         <CurrentSlideComponent />
                     </div>
                     <div className="absolute bottom-6 flex space-x-3">

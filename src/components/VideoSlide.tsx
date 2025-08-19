@@ -1,6 +1,6 @@
 import { memo } from 'react';
 
-export const UNTVideoSlide = memo(() => {
+export const VideoSlide = memo(() => {
     const videoId = "DkTTeQijEZk";
     const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0`;
 
